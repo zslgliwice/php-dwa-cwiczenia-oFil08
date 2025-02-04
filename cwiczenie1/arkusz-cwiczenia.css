@@ -1,0 +1,19 @@
+body
+{
+	background-color: #2F3237;
+	font-family: Arial;
+	color: #FFF;
+	font-size: 20px;
+	padding: 20px;
+}
+
+h1, h2, h3
+{
+	font-size: 38px;
+	color: #CF9227;
+}
+
+div
+{
+	margin: 20px 0px;
+}

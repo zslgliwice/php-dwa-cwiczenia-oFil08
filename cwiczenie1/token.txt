@@ -1,0 +1,9 @@
+function token($dlugosc = 10) {
+    $znaki = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $znakiDlugosc = strlen($znaki);
+    $randomString = '';
+    for ($i = 0; $i < $dlugosc; $i++) {
+        $randomString .= $znaki[rand(0, $znakiDlugosc - 1)];
+    }
+    return $randomString;
+}
