@@ -13,7 +13,7 @@
         </header>
 
 <?php
-// Jeśli nie przesłano danych — przekieruj do formularza
+
 if (!isset($_POST['imie'], $_POST['przedmiot'], $_POST['godziny'])) {
     header("Location: index.php");
     exit();
@@ -24,18 +24,18 @@ $przedmiot = $_POST['przedmiot'];
 $godziny = (int)$_POST['godziny'];
 $notatki = isset($_POST['notatki']);
 
-// Sprawdź poprawność danych
-$poprawnePrzedmioty = [
+
+$cennik = [
     "polski" => 50,
     "historia" => 60,
     "wos" => 45
 ];
 
-if ($imie === '' || !array_key_exists($przedmiot, $poprawnePrzedmioty) || $godziny <= 0) {
+if ($imie === '' || !array_key_exists($przedmiot, $cennik) || $godziny <= 0) {
     echo "<p>Błąd: nieprawidłowe dane formularza.</p>";
     echo '<p><a href="index.php">Wróć do formularza</a></p>';
 } else {
-    $stawka = $poprawnePrzedmioty[$przedmiot];
+    $stawka = $cennik[$przedmiot];
     $cenaPodstawowa = $stawka * $godziny;
     $cenaNotatek = $notatki ? 5 * $godziny : 0;
     $calkowityKoszt = $cenaPodstawowa + $cenaNotatek;
